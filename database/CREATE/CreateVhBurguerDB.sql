@@ -51,6 +51,7 @@ CREATE TABLE ProdutoPromocao
 (
 	ProdutoId INT NOT NULL,
 	PromocaoId INT NOT NULL,
+	PrecoAtual DECIMAL,
 	CONSTRAINT PK_ProdutoPromocao_ProdutoId_PromocaoId PRIMARY KEY (ProdutoId, PromocaoId),
 	CONSTRAINT FK_ProdutoPromocao_ProdutoId FOREIGN KEY (ProdutoId) REFERENCES Produto (ProdutoId)
 )
@@ -75,7 +76,7 @@ GO
 
 -- TRIGGERS
 -- INATIVAR O USUARIO MUDANDO DE 1 PARA 0 AO DELETAR
-CREATE TRIGGER TG_Usuario_StatusUsuario
+CREATE TRIGGER trg_Usuario_StatusUsuario
 ON Usuario
 INSTEAD OF DELETE 
 AS 
@@ -88,7 +89,7 @@ END
 GO
 
 -- AO ALTERAR OS DADOS DO PRODUTO NA TABELA OS DADOS ANTIGOS SERAO ENVIADOS PARA A TABELA LOG
-CREATE TRIGGER TG_AlteracaoProduto
+CREATE TRIGGER trg_AlteracaoProduto
 ON Produto 
 AFTER UPDATE 
 AS 
@@ -99,7 +100,7 @@ END
 GO
 
 -- INATIVAR O PRODUTO MUDANDO DE 1 PARA 0 AO DELETAR
-CREATE TRIGGER TG_Produto_StatusProduto
+CREATE TRIGGER trg_Produto_StatusProduto
 ON Produto
 INSTEAD OF DELETE 
 AS 
