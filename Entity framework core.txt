@@ -1,0 +1,4 @@
+Entity framework core
+SQLserver
+framework design
+framework tools
