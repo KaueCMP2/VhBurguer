@@ -15,7 +15,7 @@ public partial class Produto
 
     public decimal? Preco { get; set; }
 
-    public bool StatusProduto { get; set; }
+    public bool? StatusProduto { get; set; }
 
     public int UsuarioId { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿using VhBurguer.Domains;
 
-namespace VhBurguer.DTOs
+namespace VhBurguer.DTOs.UsuarioDTO
 {
     public class CriarUsuarioDTO
     {
@@ -8,6 +8,6 @@ namespace VhBurguer.DTOs
 
         public string Email { get; set; } = null!;
 
-        public byte[] Senha { get; set; } = null!;
+        public string Senha { get; set; } = null!;
     }
 }

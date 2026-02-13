@@ -6,7 +6,7 @@ namespace VhBurguer.Controller
     {
         List<Usuario> Listar();
 
-        Usuario? ObterPorId(int id);
+        Usuario? ObterPorId(int Id);
 
         Usuario? ObterPorEmail(string email);
 
@@ -16,6 +16,6 @@ namespace VhBurguer.Controller
 
         void Atualizar (Usuario usuario);
 
-        void Deletar (int id);
+        void Deletar (int Id);
     }
 }

@@ -7,42 +7,42 @@ namespace VhBurguer.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private readonly VhBurguerDbContext ctx;
+        private readonly VhBurguerDbContext _ctx;
 
         public UsuarioRepository(VhBurguerDbContext context)
         {
-            ctx = context;
+            _ctx = context;
         }
 
         public List<Usuario> Listar()
         {
-            return ctx.Usuario.ToList();
+            return _ctx.Usuario.ToList();
         }
 
-        public Usuario? ObterPorId(int id)
+        public Usuario? ObterPorId(int Id)
         {
-            return ctx.Usuario.Find(id);
+            return _ctx.Usuario.Find(Id);
         }
 
         public Usuario? ObterPorEmail(string email)
         {
-            return ctx.Usuario.FirstOrDefault(u => u.Email == email);
+            return _ctx.Usuario.FirstOrDefault(u => u.Email == email);
         }
 
         public bool EmailExiste(string email)
         {
-            return ctx.Usuario.Any(u => u.Email == email);
+            return _ctx.Usuario.Any(u => u.Email == email);
         }
 
-        public void adicionar(Usuario usuario)
+        public void Adicionar(Usuario usuario)
         {
-            ctx.Usuario.Add(usuario);
-            ctx.SaveChanges();
+            _ctx.Usuario.Add(usuario);
+            _ctx.SaveChanges();
         }
 
         public void Atualizar(Usuario usuario)
         {
-            Usuario? usuarioBanco = ctx.Usuario.FirstOrDefault(u => u.UsuarioId == usuario.UsuarioId);
+            Usuario? usuarioBanco = _ctx.Usuario.FirstOrDefault(u => u.UsuarioId == usuario.UsuarioId);
             if (usuarioBanco == null)
             {
                 return;
@@ -51,19 +51,19 @@ namespace VhBurguer.Repositories
             usuarioBanco.Email = usuario.Email;
             usuarioBanco.Senha = usuario.Senha;
 
-            ctx.Usuario.Update(usuario);
-            ctx.SaveChanges();
+            _ctx.Usuario.Update(usuario);
+            _ctx.SaveChanges();
         }
 
-        public void Deletar(int id)
+        public void Deletar(int Id)
         {
-            var usuario = ctx.Usuario.FirstOrDefault(u => u.UsuarioId == id);
+            var usuario = _ctx.Usuario.FirstOrDefault(u => u.UsuarioId == Id);
             if (usuario == null)
             {
                 return;
             }
-            ctx.Usuario.Remove(usuario);
-            ctx.SaveChanges();
+            _ctx.Usuario.Remove(usuario);
+            _ctx.SaveChanges();
         }
     }
 }
