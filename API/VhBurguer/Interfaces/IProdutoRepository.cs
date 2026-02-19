@@ -7,8 +7,9 @@ namespace VhBurguer.Interfaces
         List<Produto> Listar();
         Produto ObterPorId(int Id);
         byte[] ObterImagem(int Id);
-        bool NomeExiste(string nome, int ProdutoIdAtual);
+        bool NomeExiste(string nome, int? produtoIdAtual = null);
         void Adicionar(Produto produto, List<int> categoriaIds);
         void Atualizar(Produto produto, List<int> categoriaIds);
+        void Remover(int id);
     }
 }
