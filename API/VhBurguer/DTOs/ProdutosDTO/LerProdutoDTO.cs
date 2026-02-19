@@ -15,7 +15,7 @@
         public int UsuarioId { get; set; }
 
         // categorias 
-        public List<int> CategoriasIds { get; set; }
+        public List<int> CategoriaIds { get; set; }
         public List<string> Categorias { get; set; }
 
         //Usuario que cadastrou o produto
