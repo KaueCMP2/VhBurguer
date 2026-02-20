@@ -13,7 +13,7 @@ public partial class Produto
 
     public byte[] Imagem { get; set; } = null!;
 
-    public decimal? Preco { get; set; }
+    public decimal Preco { get; set; }
 
     public bool? StatusProduto { get; set; }
 

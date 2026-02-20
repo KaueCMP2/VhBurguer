@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VhBurguer.Contexts;
 using VhBurguer.Domains;
-using VhBurguer.Interfaces;
+using VHBurguer.Interfaces;
 
 namespace VhBurguer.Repositories
 {
@@ -18,7 +18,7 @@ namespace VhBurguer.Repositories
         {
             List<Produto> produtos = _ctx.Produto
                 .Include(p => p.Categoria)
-                .Include(p => p.UsuarioId)
+                .Include(p => p.Usuario) // corrigido: usar a navegação, não a FK
                 .ToList();
 
             return produtos;

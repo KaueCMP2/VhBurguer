@@ -1,5 +1,6 @@
 ﻿using VhBurguer.Domains;
 using VhBurguer.DTOs.ProdutosDTO;
+using VHBurguer.DTOs.ProdutoDto;
 
 namespace VhBurguer.Aplications.Conversoes
 {
@@ -9,7 +10,7 @@ namespace VhBurguer.Aplications.Conversoes
         {
             return new LerProdutoDTO()
             {
-                ProdutoId = produto.ProdutoId,
+                ProdutoID = produto.ProdutoId,
                 Nome = produto.Nome,
                 Preco = produto.Preco,
                 Descricao = produto.Descricao,
@@ -18,7 +19,7 @@ namespace VhBurguer.Aplications.Conversoes
                 CategoriaIds = produto.Categoria.Select(categoria => categoria.CategoriaId).ToList(),
                 Categorias = produto.Categoria.Select(categoria => categoria.Nome).ToList(),
 
-                UsuarioId = produto.UsuarioId,
+                UsuarioID = produto.UsuarioId,
                 UsuarioNome = produto.Usuario.Nome,
                 UsuarioEmail = produto.Usuario.Email
             };

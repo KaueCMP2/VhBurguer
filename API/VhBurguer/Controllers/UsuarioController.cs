@@ -90,11 +90,11 @@ namespace VHBurguer.Controllers
         // no nosso banco o delete vai inativar o usuário
         // por conta da trigger (processo chamado de soft delete)
         [HttpDelete("{Id}")]
-        public ActionResult Remover(int Id)
+        public ActionResult Deletar(int Id)
         {
             try
             {
-                _service.Remover(Id);
+                _service.Deletar(Id);
                 return NoContent();
             }
             catch (DomainException ex)

@@ -2,8 +2,11 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using System.Security.Claims;
 using VhBurguer.DTOs.ProdutosDTO;
+using VhBurguer.Exceptions;
 using VHBurguer.Applications.Services;
+using VHBurguer.DTOs.ProdutoDto;
 
 namespace VHBurguer.Controllers
 {
@@ -19,6 +22,23 @@ namespace VHBurguer.Controllers
         }
 
         // autenticação do usuário
+        private int ObterUsuarioIdLogado()
+        {
+            // busca no token/claims o valor armazenado como id do usuário
+            // ClaimTypes.NameIdentifier geralmente guarda o ID do usuário no JWT
+            string? idTexto = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrWhiteSpace(idTexto))
+            {
+                throw new DomainException("Usuário não autenticado");
+            }
+
+            // Converte o ID que veio como texto para inteiro
+            // nosso UsuarioID no sistema está como int
+            // as Claims (informações do usuário dentro do token) sempre são armazenadas como texto.
+            return int.Parse(idTexto);
+        }
+
 
         [HttpGet]
         public ActionResult<List<LerProdutoDTO>> Listar()
@@ -50,11 +70,45 @@ namespace VHBurguer.Controllers
             try
             {
                 int usuarioId = ObterUsuarioIdLogado();
-                
+
                 // cadastro fica associado ao usuario logado
                 _service.Adicionar(produtoDTO, usuarioId);
 
                 return StatusCode(201);
+            }
+            catch (DomainException e)
+            {
+                return BadRequest(e.Message);
+            }   
+        }
+
+        [HttpPost("(id)")]
+        [Authorize]
+        public IActionResult Atualizar(int id, [FromForm] AtuallizarProdutoDTO produtoDTO)
+        {
+            try
+            {
+                _service.Atualizar(id, produtoDTO);
+                return NoContent();
+            }
+            catch (DomainException e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                _service.Deletar(id);
+                return NoContent();
+            }
+            catch (DomainException e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }

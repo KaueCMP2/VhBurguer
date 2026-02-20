@@ -130,7 +130,7 @@ namespace VhBurguer.Aplications.Services
 
             return LerDTO(usuarioBanco);
         }
-        public void Remover(int Id)
+        public void Deletar(int Id)
         {
             Usuario usuario = _repository.ObterPorId(Id);
 

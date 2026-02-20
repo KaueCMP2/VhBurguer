@@ -4,7 +4,8 @@ using VhBurguer.Aplications.Regras;
 using VhBurguer.Domains;
 using VhBurguer.DTOs.ProdutosDTO;
 using VhBurguer.Exceptions;
-using VhBurguer.Interfaces;
+using VHBurguer.DTOs.ProdutoDto;
+using VHBurguer.Interfaces;
 
 namespace VHBurguer.Applications.Services
 {
@@ -154,7 +155,7 @@ namespace VHBurguer.Applications.Services
 
         }
 
-        public void Remover(int id)
+        public void Deletar(int id)
         {
             HorarioAlteracaoProduto.ValidarHorario();
 
@@ -165,7 +166,7 @@ namespace VHBurguer.Applications.Services
                 throw new DomainException("Produto não encontrado.");
             }
 
-            _repository.Remover(id);
+            _repository.Deletar(id);
         }
     }
 }
