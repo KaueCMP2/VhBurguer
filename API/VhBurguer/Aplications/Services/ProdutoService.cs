@@ -1,4 +1,5 @@
-﻿using VhBurguer.Aplications.Conversoes;
+﻿using Microsoft.IdentityModel.Abstractions;
+using VhBurguer.Aplications.Conversoes;
 using VhBurguer.Aplications.Regras;
 using VhBurguer.Domains;
 using VhBurguer.DTOs.ProdutosDTO;
