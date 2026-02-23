@@ -5,7 +5,7 @@ using VhBurguer.DTOs.UsuarioDTO;
 using VhBurguer.Exceptions;
 
 
-namespace VHBurguer.Controllers
+namespace VhBurguer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

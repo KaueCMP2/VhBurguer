@@ -5,7 +5,7 @@ using System.Text;
 using VhBurguer.Domains;
 using VhBurguer.Exceptions;
 
-namespace VHBurguer.Applications.Autenticacao
+namespace VhBurguer.Applications.Autenticacao
 {
     public class GeradorTokenJwt
     {

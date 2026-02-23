@@ -4,10 +4,10 @@ using VhBurguer.Aplications.Regras;
 using VhBurguer.Domains;
 using VhBurguer.DTOs.ProdutosDTO;
 using VhBurguer.Exceptions;
-using VHBurguer.DTOs.ProdutoDto;
-using VHBurguer.Interfaces;
+using VhBurguer.DTOs.ProdutoDto;
+using VhBurguer.Interfaces;
 
-namespace VHBurguer.Applications.Services
+namespace VhBurguer.Applications.Services
 {
     public class ProdutoService
     {

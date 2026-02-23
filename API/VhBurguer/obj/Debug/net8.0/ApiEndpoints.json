@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "VHBurguer.Controllers.AutenticacaoController",
+    "ContainingType": "VhBurguer.Controllers.AutenticacaoController",
     "Method": "Login",
     "RelativePath": "api/Autenticacao/login",
     "HttpMethod": "POST",
@@ -9,13 +9,13 @@
     "Parameters": [
       {
         "Name": "loginDto",
-        "Type": "VHBurguer.DTOs.AutenticacaoDto.LoginDto",
+        "Type": "VhBurguer.DTOs.AutenticacaoDto.LoginDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "VHBurguer.DTOs.AutenticacaoDto.TokenDTO",
+        "Type": "VhBurguer.DTOs.AutenticacaoDto.TokenDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "ContainingType": "VHBurguer.Controllers.ProdutoController",
+    "ContainingType": "VhBurguer.Controllers.ProdutoController",
     "Method": "Listar",
     "RelativePath": "api/Produto",
     "HttpMethod": "GET",
@@ -35,7 +35,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[VHBurguer.DTOs.ProdutoDto.LerProdutoDTO, VhBurguer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[VhBurguer.DTOs.ProdutoDto.LerProdutoDTO, VhBurguer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "ContainingType": "VHBurguer.Controllers.ProdutoController",
+    "ContainingType": "VhBurguer.Controllers.ProdutoController",
     "Method": "Adicionar",
     "RelativePath": "api/Produto",
     "HttpMethod": "POST",
@@ -82,7 +82,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "VHBurguer.Controllers.ProdutoController",
+    "ContainingType": "VhBurguer.Controllers.ProdutoController",
     "Method": "Atualizar",
     "RelativePath": "api/Produto/(id)",
     "HttpMethod": "POST",
@@ -128,7 +128,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "VHBurguer.Controllers.ProdutoController",
+    "ContainingType": "VhBurguer.Controllers.ProdutoController",
     "Method": "ObterPorId",
     "RelativePath": "api/Produto/{id}",
     "HttpMethod": "GET",
@@ -143,7 +143,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "VHBurguer.DTOs.ProdutoDto.LerProdutoDTO",
+        "Type": "VhBurguer.DTOs.ProdutoDto.LerProdutoDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -154,7 +154,7 @@
     ]
   },
   {
-    "ContainingType": "VHBurguer.Controllers.ProdutoController",
+    "ContainingType": "VhBurguer.Controllers.ProdutoController",
     "Method": "Deletar",
     "RelativePath": "api/Produto/{id}",
     "HttpMethod": "DELETE",
@@ -170,7 +170,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "VHBurguer.Controllers.UsuarioController",
+    "ContainingType": "VhBurguer.Controllers.UsuarioController",
     "Method": "Listar",
     "RelativePath": "api/Usuario",
     "HttpMethod": "GET",
@@ -190,7 +190,7 @@
     ]
   },
   {
-    "ContainingType": "VHBurguer.Controllers.UsuarioController",
+    "ContainingType": "VhBurguer.Controllers.UsuarioController",
     "Method": "Adicionar",
     "RelativePath": "api/Usuario",
     "HttpMethod": "POST",
@@ -216,7 +216,7 @@
     ]
   },
   {
-    "ContainingType": "VHBurguer.Controllers.UsuarioController",
+    "ContainingType": "VhBurguer.Controllers.UsuarioController",
     "Method": "ObterPorId",
     "RelativePath": "api/Usuario/{Id}",
     "HttpMethod": "GET",
@@ -242,7 +242,7 @@
     ]
   },
   {
-    "ContainingType": "VHBurguer.Controllers.UsuarioController",
+    "ContainingType": "VhBurguer.Controllers.UsuarioController",
     "Method": "Atualizar",
     "RelativePath": "api/Usuario/{Id}",
     "HttpMethod": "PUT",
@@ -273,7 +273,7 @@
     ]
   },
   {
-    "ContainingType": "VHBurguer.Controllers.UsuarioController",
+    "ContainingType": "VhBurguer.Controllers.UsuarioController",
     "Method": "Deletar",
     "RelativePath": "api/Usuario/{Id}",
     "HttpMethod": "DELETE",
@@ -289,7 +289,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "VHBurguer.Controllers.UsuarioController",
+    "ContainingType": "VhBurguer.Controllers.UsuarioController",
     "Method": "ObterPorEmail",
     "RelativePath": "api/Usuario/email/{email}",
     "HttpMethod": "GET",

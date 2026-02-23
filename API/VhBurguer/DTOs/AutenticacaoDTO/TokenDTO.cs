@@ -1,4 +1,4 @@
-﻿namespace VHBurguer.DTOs.AutenticacaoDto
+﻿namespace VhBurguer.DTOs.AutenticacaoDto
 {
     public class TokenDTO
     {

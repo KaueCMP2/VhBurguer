@@ -1,4 +1,4 @@
-﻿namespace VHBurguer.DTOs.ProdutoDto
+﻿namespace VhBurguer.DTOs.ProdutoDto
 {
     public class LerProdutoDTO
     {

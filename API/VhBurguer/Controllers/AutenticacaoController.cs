@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VhBurguer.Exceptions;
-using VHBurguer.Applications.Services;
-using VHBurguer.DTOs.AutenticacaoDto;
+using VhBurguer.Applications.Services;
+using VhBurguer.DTOs.AutenticacaoDto;
 
-namespace VHBurguer.Controllers
+namespace VhBurguer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AutenticacaoController : Controller
-    {
+    public class AutenticacaoController : ControllerBase
+	{
         private readonly AutenticacaoService _service;
 
         public AutenticacaoController(AutenticacaoService service)

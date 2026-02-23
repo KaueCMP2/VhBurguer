@@ -1,10 +1,10 @@
 ﻿using VhBurguer.Controller;
 using VhBurguer.Domains;
 using VhBurguer.Exceptions;
-using VHBurguer.Applications.Autenticacao;
-using VHBurguer.DTOs.AutenticacaoDto;
+using VhBurguer.Applications.Autenticacao;
+using VhBurguer.DTOs.AutenticacaoDto;
 
-namespace VHBurguer.Applications.Services
+namespace VhBurguer.Applications.Services
 {
     public class AutenticacaoService
     {

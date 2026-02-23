@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VhBurguer.Contexts;
 using VhBurguer.Domains;
-using VHBurguer.Interfaces;
+using VhBurguer.Interfaces;
 
 namespace VhBurguer.Repositories
 {

@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.Security.Claims;
 using VhBurguer.DTOs.ProdutosDTO;
 using VhBurguer.Exceptions;
-using VHBurguer.Applications.Services;
-using VHBurguer.DTOs.ProdutoDto;
+using VhBurguer.Applications.Services;
+using VhBurguer.DTOs.ProdutoDto;
 
-namespace VHBurguer.Controllers
+namespace VhBurguer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
