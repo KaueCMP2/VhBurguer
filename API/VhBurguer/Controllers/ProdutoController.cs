@@ -99,11 +99,11 @@ namespace VhBurguer.Controllers
 
         [HttpDelete("{id}")]
         [Authorize]
-        public IActionResult Deletar(int id)
+        public IActionResult Remover(int id)
         {
             try
             {
-                _service.Deletar(id);
+                _service.Remover(id);
                 return NoContent();
             }
             catch (DomainException e)

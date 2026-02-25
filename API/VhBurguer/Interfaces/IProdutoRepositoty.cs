@@ -10,7 +10,7 @@ namespace VhBurguer.Interfaces
         bool NomeExiste(string nome, int? produtoIdAtual = null);
         void Adicionar(Produto produto, List<int> categoriaIds);
         void Atualizar(Produto produto, List<int> categoriaIds);
-        void Deletar(int id);
+        void Remover(int id);
 
     }
 }

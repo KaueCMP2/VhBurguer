@@ -1,45 +1,42 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using VhBurguer.Aplications.Services;
-using VhBurguer.Domains;
-using VhBurguer.DTOs.CategoriaDTO;
-using VhBurguer.Exceptions;
+using VhBurguer.Applications.Services;
+using VhBurguer.DTOs.PromocaoDto;
 
 namespace VhBurguer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriaController : ControllerBase
+    public class PromocaoController : ControllerBase
     {
-        private readonly CategoriaService _service;
+        private readonly PromocaoService _service;
 
-        public CategoriaController(CategoriaService service)
+        public PromocaoController(PromocaoService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public ActionResult<List<LerCategoriaDTO>> Listar()
+        public ActionResult<List<LerPromocaoDTO>> Listar()
         {
-            List<LerCategoriaDTO> categorias = _service.Listar();
-            return Ok(categorias);
+            List<LerPromocaoDTO> promocoes = _service.Listar();
+            return Ok(promocoes);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<LerCategoriaDTO> ObterPorId(int id)
+        public ActionResult<LerPromocaoDTO> ObterPorId(int id)
         {
-            LerCategoriaDTO categoria = _service.ObterPorId(id);
-            if (categoria == null)
-            {
+            LerPromocaoDTO promocao = _service.ObterPorId(id);
+            if (promocao == null)
                 return NotFound();
-            }
-            return Ok(categoria);
+
+            return Ok(promocao);
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult Adicionar(CriarCategoriaDTO criarDTO)
+        public ActionResult Adicionar(CriarPromocaoDTO criarDTO)
         {
             try
             {
@@ -54,19 +51,19 @@ namespace VhBurguer.Controllers
 
         [HttpPut("{id}")]
         [Authorize]
-        public ActionResult Atualizar(int id, CriarCategoriaDTO atualizarDTO)
+        public ActionResult Atualizar(int id, CriarPromocaoDTO atualizarDTO)
         {
             try
             {
                 _service.Atualizar(id, atualizarDTO);
                 return NoContent();
             }
-            catch (DomainException ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
-
+        
         [HttpDelete("{id}")]
         [Authorize]
         public ActionResult Remover(int id)
@@ -76,7 +73,7 @@ namespace VhBurguer.Controllers
                 _service.Remover(id);
                 return NoContent();
             }
-            catch (DomainException ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }

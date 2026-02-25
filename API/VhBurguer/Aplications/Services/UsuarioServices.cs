@@ -130,7 +130,7 @@ namespace VhBurguer.Aplications.Services
 
             return LerDTO(usuarioBanco);
         }
-        public void Deletar(int Id)
+        public void Remover(int Id)
         {
             Usuario usuario = _repository.ObterPorId(Id);
 
@@ -139,7 +139,7 @@ namespace VhBurguer.Aplications.Services
                 throw new DomainException("Usuário não encontrado.");
             }
 
-            _repository.Deletar(Id);
+            _repository.Remover(Id);
         }
     }
 }

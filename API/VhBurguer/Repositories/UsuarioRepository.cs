@@ -55,7 +55,7 @@ namespace VhBurguer.Repositories
             _ctx.SaveChanges();
         }
 
-        public void Deletar(int Id)
+        public void Remover(int Id)
         {
             var usuario = _ctx.Usuario.FirstOrDefault(u => u.UsuarioId == Id);
             if (usuario == null)

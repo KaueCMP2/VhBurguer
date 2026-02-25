@@ -16,6 +16,6 @@ namespace VhBurguer.Controller
 
         void Atualizar (Usuario usuario);
 
-        void Deletar (int Id);
+        void Remover (int Id);
     }
 }

@@ -108,7 +108,7 @@ namespace VhBurguer.Repositories
             _ctx.SaveChanges();
         }
 
-        public void Deletar(int Id)
+        public void Remover(int Id)
         {
             Produto? produto = _ctx.Produto.FirstOrDefault(p => p.ProdutoId == Id);
             if (produto == null)

@@ -33,9 +33,18 @@ builder.Services.AddScoped<ProdutoService>();
 // Autentição
 builder.Services.AddScoped<AutenticacaoService>();
 builder.Services.AddScoped<GeradorTokenJwt>(); // Certifique-se que o namespace está correto
-											   // Configura o sistema de autenticação da aplicação.
-											   // Aqui estamos dizendo que o tipo de autenticação padrão será JWT Bearer.
-											   // Ou seja: a API vai esperar receber um Token JWT nas requisições.
+
+// Categoria	
+builder.Services.AddScoped<CategoriaRepository>();
+builder.Services.AddScoped<CategoriaService>();
+
+//Promoção
+builder.Services.AddScoped<PromocaoRepository>();
+builder.Services.AddScoped<PromocaoService>();
+
+// Configura o sistema de autenticação da aplicação.
+// Aqui estamos dizendo que o tipo de autenticação padrão será JWT Bearer.
+// Ou seja: a API vai esperar receber um Token JWT nas requisições.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 	// Adiciona o suporte para autenticação usando JWT.

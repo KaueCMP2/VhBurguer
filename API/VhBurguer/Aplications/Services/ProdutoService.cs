@@ -155,7 +155,7 @@ namespace VhBurguer.Applications.Services
 
         }
 
-        public void Deletar(int id)
+        public void Remover(int id)
         {
             HorarioAlteracaoProduto.ValidarHorario();
 
@@ -166,7 +166,7 @@ namespace VhBurguer.Applications.Services
                 throw new DomainException("Produto não encontrado.");
             }
 
-            _repository.Deletar(id);
+            _repository.Remover(id);
         }
     }
 }

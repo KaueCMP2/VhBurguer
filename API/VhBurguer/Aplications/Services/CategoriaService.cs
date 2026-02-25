@@ -81,7 +81,7 @@ namespace VhBurguer.Aplications.Services
             _repository.Atualizar(categoriaBanco);
         }
 
-        public void Deletar(int id)
+        public void Remover(int id)
         {
             Categoria categoriaBanco = _repository.ObterPorId(id);
             if (categoriaBanco == null)
