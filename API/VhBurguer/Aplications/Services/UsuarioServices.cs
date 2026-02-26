@@ -7,7 +7,7 @@ using VhBurguer.Exceptions;
 
 namespace VhBurguer.Aplications.Services
 {
-    public class UsuarioServices
+    public class UsuarioService
     {
         // Repository é o canal para acessarmos os dados.
         private readonly IUsuarioRepository _repository;
@@ -15,7 +15,7 @@ namespace VhBurguer.Aplications.Services
 
         // Injeção de dependência do repository para o serviço.
         // O serviço depende do repository para realizar as operações de negócio.
-        public UsuarioServices(IUsuarioRepository _UsuarioRepository)
+        public UsuarioService(IUsuarioRepository _UsuarioRepository)
         {
             _repository = _UsuarioRepository;
         }

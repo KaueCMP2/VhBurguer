@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using VhBurguer.Aplications.Services;
-using VhBurguer.Domains;
 using VhBurguer.DTOs.CategoriaDTO;
 using VhBurguer.Exceptions;
 

@@ -82,7 +82,7 @@ namespace VhBurguer.Controllers
             }   
         }
 
-        [HttpPost("(id)")]
+        [HttpPut("(id)")]
         [Authorize]
         public IActionResult Atualizar(int id, [FromForm] AtuallizarProdutoDTO produtoDTO)
         {

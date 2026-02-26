@@ -1,8 +1,8 @@
-﻿using VhBurguer.Domains;
+﻿using VhBurguer.Contexts;
+using VhBurguer.Domains;
 using VhBurguer.Interfaces;
-using VhBurguer.Contexts;
 
-namespace VhBurguer.Repositories
+namespace VHBurguer.Repositories
 {
     public class PromocaoRepository : IPromocaoRepository
     {
@@ -21,7 +21,7 @@ namespace VhBurguer.Repositories
 
         public Promocao ObterPorId(int id)
         {
-            Promocao? promocao = _context.Promocao.FirstOrDefault(promocaoQuery => promocaoQuery.PromocaoId == id);
+            Promocao promocao = _context.Promocao.FirstOrDefault(p => p.PromocaoId == id);
 
             return promocao;
         }
@@ -32,24 +32,23 @@ namespace VhBurguer.Repositories
 
             if (promocaoIdAtual.HasValue)
             {
-                consulta = consulta.Where(promocaoQuery => promocaoQuery.PromocaoId != promocaoIdAtual.Value);
+                consulta = consulta.Where(p => p.PromocaoId != promocaoIdAtual.Value);
             }
 
             return consulta.Any(p => p.Nome == nome);
-
         }
 
         public void Adicionar(Promocao promocao)
         {
             _context.Promocao.Add(promocao);
             _context.SaveChanges();
-
         }
 
         public void Atualizar(Promocao promocao)
         {
-            Promocao? promocaoBanco = _context.Promocao.FirstOrDefault(p => p.PromocaoId == p.PromocaoId);
-            if (promocao == null)
+            Promocao? promocaoBanco = _context.Promocao.FirstOrDefault(p => p.PromocaoId == promocao.PromocaoId);
+
+            if (promocaoBanco == null)
             {
                 return;
             }
@@ -57,6 +56,8 @@ namespace VhBurguer.Repositories
             promocaoBanco.Nome = promocao.Nome;
             promocaoBanco.DataExpiracao = promocao.DataExpiracao;
             promocaoBanco.StatusPromocao = promocao.StatusPromocao;
+
+            _context.SaveChanges();
         }
 
         public void Remover(int id)
@@ -64,13 +65,12 @@ namespace VhBurguer.Repositories
             Promocao? promocao = _context.Promocao.FirstOrDefault(p => p.PromocaoId == id);
 
             if (promocao == null)
+            {
                 return;
+            }
 
             _context.Promocao.Remove(promocao);
             _context.SaveChanges();
         }
-
-
-
     }
 }

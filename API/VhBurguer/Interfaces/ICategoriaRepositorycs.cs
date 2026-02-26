@@ -1,9 +1,8 @@
 ﻿using VhBurguer.Domains;
-using VhBurguer.DTOs.CategoriaDTO;
 
 namespace VhBurguer.Interfaces
 {
-    public interface ICategoriaRepositorycs
+    public interface ICategoriaRepository
     {
         List<Categoria> Listar();
         Categoria ObterPorId(int id);

@@ -35,11 +35,17 @@ namespace VhBurguer.Applications.Services
                 throw new DomainException("E-mail ou senha inválidos");
             }
 
+            if (usuario.StatusUsuario == false)
+            {
+                throw new DomainException("Usuario inválido ou inativo");
+            }
+
             // comparar a senha digitada com a senha armazenada
             if(!VerificarSenha(loginDto.Senha, usuario.Senha))
             {
                 throw new DomainException("E-mail ou senha inválidos");
             }
+
 
             // gerando o token
             var token = _tokenJwt.GerarToken(usuario);

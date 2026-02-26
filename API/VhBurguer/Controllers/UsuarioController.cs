@@ -7,100 +7,103 @@ using VhBurguer.Exceptions;
 
 namespace VhBurguer.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UsuarioController : ControllerBase
-    {
-        private readonly UsuarioServices _service;
+	[Route("api/[controller]")]
+	[ApiController]
+	public class UsuarioController : ControllerBase
+	{
+		private readonly UsuarioService _service;
 
-        public UsuarioController(UsuarioServices service)
-        {
-            _service = service;
-        }
+		public UsuarioController(UsuarioService service)
+		{
+			_service = service;
+		}
 
-        // GET -> lista informações
-        [HttpGet]
-        public ActionResult<List<LerUsuarioDTO>> Listar()
-        {
-            List<LerUsuarioDTO> usuarios = _service.Listar();
+		// GET -> lista informações
+		[HttpGet]
+		public ActionResult<List<LerUsuarioDTO>> Listar()
+		{
+			List<LerUsuarioDTO> usuarios = _service.Listar();
 
-            // retorna a lista de usuários, a partir da DTO de Services
-            return Ok(usuarios); // OK - 200 - DEU CERTO
-        }
+			// retorna a lista de usuários, a partir da DTO de Services
+			return Ok(usuarios); // OK - 200 - DEU CERTO
+		}
 
-        [HttpGet("{Id}")]
-        public ActionResult<LerUsuarioDTO> ObterPorId(int Id)
-        {
-            LerUsuarioDTO usuario = _service.ObterPorId(Id);
+		[HttpGet("{Id}")]
+		public ActionResult<LerUsuarioDTO> ObterPorId(int Id)
+		{
+			LerUsuarioDTO usuario = _service.ObterPorId(Id);
 
-            if (usuario == null)
-            {
-                return NotFound(); // NÃO ENCONTRADO - StatusCode 404
-            }
+			if (usuario == null)
+			{
+				return NotFound(); // NÃO ENCONTRADO - StatusCode 404
+			}
 
-            return Ok(usuario);
-        }
+			return Ok(usuario);
+		}
 
-        [HttpGet("email/{email}")]
-        public ActionResult<LerUsuarioDTO> ObterPorEmail(string email)
-        {
-            LerUsuarioDTO usuario = _service.ObterPorEmail(email);
+		[HttpGet("email/{email}")]
+		public ActionResult<LerUsuarioDTO> ObterPorEmail(string email)
+		{
 
-            if (usuario == null)
-            {
-                return NotFound();
-            }
+			try
+			{
+			LerUsuarioDTO usuario = _service.ObterPorEmail(email);
+				return Ok(usuario);
+			}
+			catch (Exception ex)
+			{
 
-            return Ok(usuario);
-        }
+				return NotFound(ex);
+			}
+		}
 
-        // POST - Envia dados 
-        [HttpPost]
-        public ActionResult<LerUsuarioDTO> Adicionar(CriarUsuarioDTO usuarioDto)
-        {
-            try
-            {
-                LerUsuarioDTO usuarioCriado = _service.Adicionar(usuarioDto);
+		// POST - Envia dados 
+		[HttpPost]
+		public ActionResult<LerUsuarioDTO> Adicionar(CriarUsuarioDTO usuarioDto)
+		{
+			try
+			{
+				LerUsuarioDTO usuarioCriado = _service.Adicionar(usuarioDto);
 
-                return StatusCode(201, usuarioCriado);
-            }
-            catch (DomainException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+				return StatusCode(201, usuarioCriado);
+			}
+			catch (DomainException ex)
+			{
+				return BadRequest(ex.Message);
+			}
+		}
 
-        // Realiza alterações de todos os dados
-        [HttpPut("{Id}")]
-        public ActionResult<LerUsuarioDTO> Atualizar(int Id, CriarUsuarioDTO usuarioDto)
-        {
-            try
-            {
-                LerUsuarioDTO usuarioAtualizado = _service.Atualizar(Id, usuarioDto);
+		// Realiza alterações de todos os dados
+		[HttpPut("{Id}")]
+		public ActionResult<LerUsuarioDTO> Atualizar(int Id, CriarUsuarioDTO usuarioDto)
+		{
+			try
+			{
+				LerUsuarioDTO usuarioAtualizado = _service.Atualizar(Id, usuarioDto);
 
-                return StatusCode(200, usuarioAtualizado);
-            }
-            catch (DomainException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+				return StatusCode(200, usuarioAtualizado);
+			}
+			catch (DomainException ex)
+			{
+				return BadRequest(ex.Message);
+			}
+		}
 
-        // Remove os dados
-        // no nosso banco o delete vai inativar o usuário
-        // por conta da trigger (processo chamado de soft delete)
-        [HttpDelete("{Id}")]
-        public ActionResult Remover(int Id)
-        {
-            try
-            {
-                _service.Remover(Id);
-                return NoContent();
-            }
-            catch (DomainException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-    }
+		// Remove os dados
+		// no nosso banco o delete vai inativar o usuário
+		// por conta da trigger (processo chamado de soft delete)
+		[HttpDelete("{Id}")]
+		public ActionResult Remover(int Id)
+		{
+			try
+			{
+				_service.Remover(Id);
+				return NoContent();
+			}
+			catch (DomainException ex)
+			{
+				return BadRequest(ex.Message);
+			}
+		}
+	}
 }

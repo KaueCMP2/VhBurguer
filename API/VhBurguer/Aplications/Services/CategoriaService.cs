@@ -1,14 +1,15 @@
 ﻿using VhBurguer.Domains;
 using VhBurguer.DTOs.CategoriaDTO;
 using VhBurguer.Exceptions;
+using VhBurguer.Interfaces;
 using VhBurguer.Repositories;
 
 namespace VhBurguer.Aplications.Services
 {
     public class CategoriaService
     {
-        private readonly CategoriaRepository _repository;
-        public CategoriaService(CategoriaRepository repository)
+        private readonly ICategoriaRepository _repository;
+        public CategoriaService(ICategoriaRepository repository)
         {
             _repository = repository;
         }
@@ -60,7 +61,7 @@ namespace VhBurguer.Aplications.Services
             {
                 Nome = criarDTO.Nome
             };
-            _repository.adicionar(categoria);
+            _repository.Adicionar(categoria);
         }
 
         public void Atualizar(int id, CriarCategoriaDTO criarDTO)

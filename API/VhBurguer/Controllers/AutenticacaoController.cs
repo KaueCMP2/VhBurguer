@@ -22,7 +22,7 @@ namespace VhBurguer.Controllers
             try
             {
                 var token = _service.Login(loginDto);
-
+                
                 return Ok(token);
             }
             catch (DomainException ex)
