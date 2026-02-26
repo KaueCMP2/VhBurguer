@@ -422,7 +422,7 @@
       }
     },
     "/api/Produto/(id)": {
-      "post": {
+      "put": {
         "tags": [
           "Produto"
         ],

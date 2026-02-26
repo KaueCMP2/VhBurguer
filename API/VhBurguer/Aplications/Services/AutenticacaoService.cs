@@ -35,6 +35,7 @@ namespace VhBurguer.Applications.Services
                 throw new DomainException("E-mail ou senha inválidos");
             }
 
+            // Usuario inativo não faz login...
             if (usuario.StatusUsuario == false)
             {
                 throw new DomainException("Usuario inválido ou inativo");

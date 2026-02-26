@@ -215,7 +215,7 @@
     "ContainingType": "VhBurguer.Controllers.ProdutoController",
     "Method": "Atualizar",
     "RelativePath": "api/Produto/(id)",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
