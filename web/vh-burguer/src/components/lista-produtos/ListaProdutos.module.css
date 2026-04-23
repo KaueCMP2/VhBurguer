@@ -1,0 +1,106 @@
+.cardapio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--fundo-claro);
+    padding: 6% 0 5% 0;
+}
+
+#titulo {
+    color: var(--laranja-destaque);
+    font-size: 80px;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+
+.icon {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--laranja-destaque);
+}
+
+#botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#btn_filtro {
+    background-color: var(--laranja-destaque);
+    color: var(--vinho);
+    font-size: 25px;
+    border: none;
+    font-weight: 400;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    cursor: pointer;
+    margin-bottom: 5%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botoes_esquerda {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    width: 30vw;
+}
+
+#btn_adic_prod {
+    background-color: var(--laranja-destaque);
+    border: none;
+    width: 45%;
+    height: 60px;
+    border-radius: 10px;
+    color: var(--vinho);
+    font-size: 25px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#btn_todas_promos {
+    background-color: var(--laranja-destaque);
+    border: none;
+    width: 45%;
+    height: 60px;
+    border-radius: 10px;
+    color: var(--vinho);
+    font-size: 25px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 100%;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 80px;
+    column-gap: 30px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+    #content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 785px) {
+    #content{
+        grid-template-columns: 1fr;
+    }
+}
