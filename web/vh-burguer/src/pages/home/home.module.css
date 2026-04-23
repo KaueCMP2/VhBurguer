@@ -1,0 +1,192 @@
+/*?------------------------------------------------------------*/
+/*?                          Banner                            */
+/*?------------------------------------------------------------*/
+
+#banner {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#conteiner_banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+}
+
+#titulo {
+    font-weight: 500;
+    font-size: 70px;
+    width: auto;
+    color: var(--laranja-destaque);
+}
+
+#img_banner {
+    width: 700px;
+}
+
+#buttons_header {
+    display: flex;
+    width: 65%;
+    gap: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn_chamar_atendente {
+    border: none;
+    width: 400px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: var(--tamanho-texto-btn);
+    color: var(--vinho);
+    font-weight: 500;
+    background-color: var(--laranja-destaque);
+    cursor: pointer;
+}
+
+#btn_ver_cardapio {
+    border: none;
+    width: 400px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: var(--tamanho-texto-btn);
+    color: var(--laranja-destaque);
+    font-weight: 500;
+    background-color: var(--vinho);
+    cursor: pointer;
+}
+
+
+/*?------------------------------------------------------------*/
+/*?                         Destaques                          */
+/*?------------------------------------------------------------*/
+
+.destaques {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    background-color: var(--fundo-escuro);
+}
+
+#conteiner_destaques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    height: 70%;
+    gap: 10px;
+    color: var(--fundo-claro);
+}
+
+.dest_grande {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    grid-column: 1;
+    grid-area: span 2;
+
+    width: 100%;
+    padding: 0 0 30px 20px;
+    border-radius: 20px;
+    background-image: url('/imgs/mais_pedidos.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.dest_peq_cima {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 100%;
+    padding: 0 20px 30px 0;
+    border-radius: 20px;
+    background-image: url('/imgs/muito_bacon.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.dest_peq_baixo {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 100%;
+    padding: 0 20px 30px 0;
+    border-radius: 20px;
+    background-image: url('/imgs/super_combos.png');
+}
+
+.dest_text {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.text_enfase {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+/*?------------------------------------------------------------*/
+/*?                         Unidades                          */
+/*?------------------------------------------------------------*/
+
+.unidades {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 101vh;
+
+    background-image: url('/imgs/unidade.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: var(--fundo-claro);
+}
+
+#text_un_titulo {
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.text_un_ul {
+    font-size: 30px;
+}
+
+@media (max-width: 1100) {
+    #titulo {
+        font-size: 50px;
+        width: auto;
+    }
+
+    #img_banner {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600) {
+    #img_banner {
+        display: none;
+    }
+
+    #buttons_header {
+        display: flex;
+        width: 100%;
+        gap: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
