@@ -2,3 +2,9 @@ Entity framework core
 SQLserver
 framework design
 framework tools
+
+-- Comando Scaffold
+Scaffold-DbContext "Server=localhost; Database=VhBurguerDb; Trusted_Connection=true; TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -UseDatabaseNames -NoPluralize
+
+-- Criar .env
+dot net add package DotNetEnv

@@ -39,8 +39,7 @@
               "ViewState": "AgIAADAAAAAAAAAAAAAWwEcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-26T11:18:26.646Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -48,9 +47,9 @@
               "Title": "AutenticacaoService.cs",
               "DocumentMoniker": "C:\\Users\\23969368839\\Documents\\VhBurguer\\API\\VhBurguer\\Aplications\\Services\\AutenticacaoService.cs",
               "RelativeDocumentMoniker": "Aplications\\Services\\AutenticacaoService.cs",
-              "ToolTip": "C:\\Users\\23969368839\\Documents\\VhBurguer\\API\\VhBurguer\\Aplications\\Services\\AutenticacaoService.cs",
-              "RelativeToolTip": "Aplications\\Services\\AutenticacaoService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCQAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\23969368839\\Documents\\VhBurguer\\API\\VhBurguer\\Aplications\\Services\\AutenticacaoService.cs*",
+              "RelativeToolTip": "Aplications\\Services\\AutenticacaoService.cs*",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-26T13:31:00.507Z",
               "EditorCaption": ""
@@ -77,8 +76,7 @@
               "RelativeToolTip": "Controllers\\CategoriaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T13:27:25.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-26T13:27:25.77Z"
             }
           ]
         }
