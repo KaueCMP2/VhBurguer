@@ -7,7 +7,7 @@ const SubHeader = () => {
         <header id={styles.header}>
             <div className={`${styles.conteiner_sub_header} _layout_guid`}>
                 <img className={styles.logo_img} src="../imgs/logo_footer.svg" alt="Logo Vh burguer com hamburguer de fundo" />
-                <Link href="/home-adm" id={styles.link_voltar}>Voltar</Link>
+                <Link href="/home-adm/#cardapio" id={styles.link_voltar}>Voltar</Link>
             </div>
         </header >
     )
