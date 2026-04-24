@@ -1,15 +1,15 @@
-import ContentCriarCagoria from "@/components/criar-categoria/ContentCriarCagoria";
 import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 import SubHeader from "@/components/sub-header/SubHeader";
 
-const Categoria = () => {
+const Historico = () => {
     return (
         <>
             <SubHeader />
-            <ContentCriarCagoria />
+
             <Footer />
         </>
     );
 }
 
-export default Categoria;
+export default Historico;

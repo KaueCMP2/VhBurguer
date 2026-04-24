@@ -16,20 +16,20 @@
     align-items: center;
     flex-direction: column;
     width: 90%;
-    height: 65%;
+    height: 70%;
 }
 
 #titulo {
     font-weight: 500;
-    font-size: 120px;
+    font-size: clamp(2.5rem, 10vw, 120px);
     color: var(--laranja-destaque);
     position: relative;
 }
 
 #banner_hamb_img {
-    height: 45%;
+    width: clamp(300px, 40vw, 80vw);
     position: absolute;
-    top: 300px;
+    top: 235px;
 }
 
 #placeholder_vaz {
@@ -38,8 +38,10 @@
 }
 
 #buttons_header {
-    width: 50%;
     display: flex;
+    flex-direction: row;
+    width: 50%;
+    gap: 5%;
     justify-content: space-between;
 }
 
@@ -171,4 +173,20 @@
 
 .text_un_ul {
     font-size: 30px;
+}
+
+ @media (max-width: 600) {
+    #buttons_header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10%;
+    }
+
+    #buttons_header button{
+        width: 80%;
+        height: 60px;
+    }
+
 }
