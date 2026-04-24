@@ -4,6 +4,7 @@ import CardProduto from '../card-produto/CardProduto'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faSliders } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const ListaProduto = () => {
     return (
@@ -16,13 +17,14 @@ const ListaProduto = () => {
                         <FontAwesomeIcon icon={faSliders} />
                     </button>
 
-                    <div className={styles.botoes_esquerda}>
-                        <button id={styles.btn_adic_prod}>
-                            <span className={styles.adic_prod}>Produtos</span>
-                        </button>
-                        <button id={styles.btn_todas_promos}>
-                            <span className={styles.texto_todas_promos}>Promos</span>
-                        </button>
+                    <div className={styles.links_esquerda}>
+                        <Link href='/adicionar-produto' className={styles.link_navegacao}>
+                            Adicionar Produtos
+                        </Link>
+
+                        <Link href='/promocao' className={styles.link_navegacao}>
+                            Promos
+                        </Link>
                     </div>
                 </div>
                 <div id={styles.content}>

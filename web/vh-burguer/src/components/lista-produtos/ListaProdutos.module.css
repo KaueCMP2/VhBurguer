@@ -45,35 +45,26 @@
     gap: 10px;
 }
 
-.botoes_esquerda {
+.links_esquerda {
     display: flex;
     justify-content: space-between;
-    gap: 10%;
-    width: 30vw;
+    width: 52vw;
 }
 
-#btn_adic_prod {
+.link_navegacao {
+    display: flex;
     background-color: var(--laranja-destaque);
-    border: none;
-    width: 45%;
+    width: 48%;
     height: 60px;
-    border-radius: 10px;
-    color: var(--vinho);
-    font-size: 25px;
-    font-weight: 400;
-    cursor: pointer;
-}
-
-#btn_todas_promos {
-    background-color: var(--laranja-destaque);
     border: none;
-    width: 45%;
-    height: 60px;
     border-radius: 10px;
-    color: var(--vinho);
-    font-size: 25px;
-    font-weight: 400;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 25px;
+    color: var(--vinho);
 }
 
 #container {
@@ -94,13 +85,49 @@
 }
 
 @media (max-width: 1000px) {
-    #content{
+    #content {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .links_esquerda {
+        flex-direction: column;
+        gap: 10px;
+        width: 48%;
+        margin-bottom: 2%;
+    }
+
+    .link_navegacao {
+        width: 100%;
     }
 }
 
 @media (max-width: 785px) {
-    #content{
+    #content {
         grid-template-columns: 1fr;
+    }
+
+    #container {
+        width: 60%;
+    }
+
+    #botoes {
+        flex-direction: column;
+    }
+
+    #btn_filtro {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+
+    .links_esquerda {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 10%;
+    }
+
+    .link_navegacao {
+        width: 100%;
     }
 }
