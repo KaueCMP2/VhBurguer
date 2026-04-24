@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import styles from "../home-adm/home-adm.module.css"
+import styles from "../home-adm/home_adm.module.css"
 import ListaProduto from "@/components/lista-produtos/ListaProdutos";
 
 const HomeAdm = () => {

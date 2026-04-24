@@ -3,6 +3,7 @@ import styles from "../home/home.module.css"
 import Footer from "@/components/footer/Footer";
 
 import ListaProduto from "@/components/lista-produtos/ListaProdutos";
+import SubHeader from "@/components/sub-header/SubHeader";
 
 const Home = () => {
     return (

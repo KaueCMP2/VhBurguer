@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../card-produto/CardProduto.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPencil, faSliders, faTrash } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const CardProduto = () => {
   return (
@@ -20,9 +21,9 @@ const CardProduto = () => {
           <button className={styles.btn_apag_prod}>
             <FontAwesomeIcon className={styles.icon} icon={faTrash} style={{ color: "rgb(255, 163, 0)", }} fontSize='30' />
           </button>
-          <button className={styles.btn_edit_prod}>
+          <Link href='/detalhe-produto' className={styles.btn_edit_prod}>
             <FontAwesomeIcon icon={faPencil} style={{ color: "rgb(255, 163, 0)", }} fontSize='30' />
-          </button>
+          </Link>
         </div>
       </div>
     </article>
