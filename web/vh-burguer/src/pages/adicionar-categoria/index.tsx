@@ -1,12 +1,13 @@
+import ContentCriarCagoria from "@/components/content-criar-categoria/ContentCriarCagoria";
 import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
+import SubHeader from "@/components/sub-header/SubHeader";
 
 const Categoria = () => {
     return (
         <>
-        <Header />
-        
-        <Footer />
+            <SubHeader />
+            <ContentCriarCagoria />
+            <Footer />
         </>
     );
 }
