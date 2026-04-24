@@ -22,9 +22,11 @@
 
 #titulo {
     font-weight: 500;
-    font-size: 70px;
+    font-size: clamp(1vw, 5rem, 4vw);
     width: auto;
     color: var(--laranja-destaque);
+    text-align: center;
+    margin: 5%;
 }
 
 #img_banner {
@@ -176,17 +178,22 @@
     }
 }
 
-@media (max-width: 600) {
-    #img_banner {
+ @media (max-width: 600) {
+    /* #img_banner {
         display: none;
-    }
+    }  */
 
     #buttons_header {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         gap: 10%;
-        display: flex;
-        justify-content: space-between;
+    }
+
+    #buttons_header button{
+        width: 80%;
+        height: 40px;
     }
 
 }
