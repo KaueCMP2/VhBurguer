@@ -1,0 +1,11 @@
+.container_itens {
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
