@@ -87,22 +87,28 @@
     color: var(--fundo-claro);
 }
 
-.dest_grande {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    justify-content: flex-end;
+    .img_dest:hover {
+        backdrop-filter: blur(10px);
+        transform: scale(102%);
+        transition: 0.2s ease-in;
+    }
 
-    grid-column: 1;
-    grid-area: span 2;
+    .dest_grande {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: flex-end;
 
-    width: 100%;
-    padding: 0 0 30px 20px;
-    border-radius: 20px;
-    background-image: url('/imgs/mais_pedidos.png');
-    background-size: cover;
-    background-position: center;
-}
+        grid-column: 1;
+        grid-area: span 2;
+
+        width: 100%;
+        padding: 0 0 30px 20px;
+        border-radius: 20px;
+        background-image: url('/imgs/mais_pedidos.png');
+        background-size: cover;
+        background-position: center;
+    }
 
 .dest_peq_cima {
     display: flex;

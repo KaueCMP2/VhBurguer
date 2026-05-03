@@ -36,7 +36,7 @@ namespace Assets_menagement_system.Controllers
             return Ok(patrimonio);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Cordenador")]
         [HttpPost("Importar-csv")]
         public ActionResult Adicionar(IFormFile arquivoCsv)
         {
@@ -58,7 +58,7 @@ namespace Assets_menagement_system.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = "Cordenador")]
         [HttpPut("{id}")]
         public ActionResult Atualizar(Guid id, AtualizarStatusPatrimonioDTO dto)
         {

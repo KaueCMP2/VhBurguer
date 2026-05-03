@@ -27,17 +27,17 @@ const HomeAdm = () => {
 
                 <section id={styles.destaques}>
                     <div id={styles.conteiner_destaques}>
-                        <div className={styles.dest_grande}>
+                        <div className={`${styles.dest_grande} ${styles.img_dest}`}>
                             <p className={styles.dest_text}>Os queridinhos da galera</p>
                             <h3 className={styles.text_enfase}>MAIS PEDIDOS</h3>
                         </div>
 
-                        <div className={styles.dest_peq_cima}>
+                        <div className={`${styles.dest_peq_cima} ${styles.img_dest}`}>
                             <p className={styles.dest_text}>Lanches com</p>
                             <h3 className={styles.text_enfase}>MUITO BACON</h3>
                         </div>
 
-                        <div className={styles.dest_peq_baixo}>
+                        <div className={`${styles.dest_peq_baixo} ${styles.img_dest}`}>
                             <p className={styles.dest_text}>Se tiver muita fome</p>
                             <h3 className={styles.text_enfase}>SUPER COMBOS</h3>
                         </div>
