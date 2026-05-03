@@ -1,0 +1,35 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using VhBurguer.Exceptions;
+using VhBurguer.Applications.Services;
+using VhBurguer.DTOs.AutenticacaoDto;
+
+namespace VhBurguer.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AutenticacaoController : ControllerBase
+	{
+        private readonly AutenticacaoService _service;
+
+        public AutenticacaoController(AutenticacaoService service)
+        {
+            _service = service;
+        }
+
+        [HttpPost("login")]
+        public ActionResult<TokenDTO> Login(LoginDto loginDto)
+        {
+            try
+            {
+                var token = _service.Login(loginDto);
+                
+                return Ok(token);
+            }
+            catch (DomainException ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+    }
+}
