@@ -46,6 +46,7 @@
     height: 5vh;
     border-radius: .5vw;
     border: 3px solid var(--laranja-destaque);
+    border: 3px solid var(--laranja-destaque);
     outline: none;
     transition: border .2s ease;
     display: flex;
@@ -70,7 +71,7 @@
     font-size: 14px;
     transition: 0.2s;
 
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 3px solid var(--laranja-destaque);
     /* border-radius: 10px; */
     /* padding: 0 18px; */
     /* font-size: 16px; */
@@ -103,13 +104,15 @@
 }
 
 .inserir_dados input:focus,
+.inserir_dados textarea:focus,
 .inserir_dados select:focus {
     border: 3px solid var(--fundo-claro);
     outline: none;
-
 }
 
-.inserir_dados input:hover {
+.inserir_dados input:hover,
+.inserir_dados textarea:hover,
+.inserir_dados select:hover {
     border: 3px solid var(--fundo-claro);
 }
 
