@@ -14,8 +14,7 @@ export async function listarCategoriaService() {
         const response = await api.get("Categoria");
         console.log(response.data);
         return response;
-    }
-    catch (error: any) {
+    } catch (error: any) {
         throw new Error(error.response.data);
     }
 }

@@ -1,5 +1,6 @@
 //! AXIOS é o responsavel por fazer consumo de APIs EXTERNAS
 import axios from "axios"
+import { config } from "process";
 
 //! SecureLocalStorage salva dados no local storage do navegador de forma CRIPTOGRAFADA.
 import secureLocalStorage from "react-secure-storage"

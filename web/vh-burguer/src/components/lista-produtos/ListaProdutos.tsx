@@ -1,12 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../lista-produtos/ListaProdutos.module.css'
 import CardProduto from '../card-produto/CardProduto'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faSliders } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { listarProduto } from '@/pages/api/produtoService';
+
+type produtos = {
+    produtoId: number,
+    nome: string,
+    preco: number,
+    descricao: string,
+    imagemUrl: string
+};
 
 const ListaProduto = () => {
+    const [produtos, setProdutos] = useState<produtos[]>([]);
+
+    async function listar() {
+        try {
+            const lista = await listarProduto();
+            setProdutos(lista);
+        } catch (error: any) {
+
+            console.log(error.message)
+        }
+    }
+
+    useEffect(() => {
+        listar()
+    }, [])
+
     return (
         <section className={styles.cardapio} id="cardapio">
             <h2 id={styles.titulo}>CARDÁPIO</h2>
@@ -28,12 +53,20 @@ const ListaProduto = () => {
                     </div>
                 </div>
                 <div id={styles.content}>
-                    <CardProduto />
-                    <CardProduto />
-                    <CardProduto />
-                    <CardProduto />
-                    <CardProduto />
-                    <CardProduto />
+                    {produtos.length > 0 ? produtos.map((item) => (
+                        <CardProduto
+                            key={item.produtoId}
+                            produtoId={item.produtoId}
+                            nome={item.nome}
+                            descricao={item.descricao}
+                            imagemUrl={item.imagemUrl}
+                            preco={item.preco}
+                        />
+                    ))
+                        : (
+                            <p> Carregando produtos...</p>
+                        )}
+
                 </div>
             </div>
         </section >

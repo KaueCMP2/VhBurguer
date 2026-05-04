@@ -10,7 +10,7 @@ import Link from "next/link";
 import Footer from "@/components/footer/Footer";
 
 interface Categoria {
-    categoriaId: number;
+    categoriaIds: number;
     nome: string;
 }
 
@@ -92,7 +92,7 @@ const criarProduto = () => {
                         >
 
                             {categoria.map((item) => (
-                                <option value={item.categoriaId} key={item.categoriaId}>
+                                <option value={item.categoriaIds} key={item.categoriaIds}>
                                     {item.nome}
                                 </option>
                             ))}
