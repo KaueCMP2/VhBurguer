@@ -992,6 +992,10 @@
             "type": "boolean",
             "nullable": true
           },
+          "imagemUrl": {
+            "type": "string",
+            "nullable": true
+          },
           "categoriaIds": {
             "type": "array",
             "items": {

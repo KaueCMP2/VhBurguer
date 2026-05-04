@@ -11,6 +11,7 @@
         public string Descricao { get; set; } = null!;
 
         public bool? StatusProduto { get; set; }
+        public string ImagemUrl { get; set; }
 
         // categorias
         public List<int> CategoriaIds { get; set; } = new();

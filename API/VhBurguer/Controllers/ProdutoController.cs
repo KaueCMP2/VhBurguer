@@ -62,6 +62,7 @@ namespace VhBurguer.Controllers
 
             return Ok(produto);
         }
+
         [HttpPost]
         [Consumes("Multipart/Form-Data")] // Indica que recebe dados no formato multpart/from-data
         [Authorize] // exige login para adicionar produtos
