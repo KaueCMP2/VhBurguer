@@ -13,7 +13,8 @@ type produto = {
   nome: string,
   preco: number,
   descricao: string,
-  imagemUrl: string
+  imagemUrl: string,
+  onDelete: (produtoId: number) => void
 };
 
 const CardProduto = (produto: produto) => {
@@ -34,16 +35,16 @@ const CardProduto = (produto: produto) => {
             <FontAwesomeIcon icon={faCircleInfo} style={{ color: "rgb(255, 163, 0)", }} fontSize='35' />
           </Link>
 
-          <button>
+          <button onClick={() => produto.onDelete(produto.produtoId)}>
             <FontAwesomeIcon className={styles.icon} icon={faTrash} style={{ color: "rgb(255, 163, 0)", }} fontSize='30' />
           </button>
 
-          <Link href='/detalhe-produto'>
+          <Link href={"/produto/id=" + produto.produtoId}>
             <FontAwesomeIcon icon={faPencil} style={{ color: "rgb(255, 163, 0)", }} fontSize='30' />
           </Link>
         </div>
       </div>
-    </article>
+    </article >
   )
 }
 

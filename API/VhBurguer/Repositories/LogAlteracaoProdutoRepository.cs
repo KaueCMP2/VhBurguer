@@ -21,7 +21,7 @@ namespace VhBurguer.Repositories
             return log;
         }
 
-        public List<Log_AlteracaoProduto> ListarPorProduto(int id)
+        public List<Log_AlteracaoProduto> ListarPorIdProduto(int id)
         {
             List<Log_AlteracaoProduto> alteracaoProduto = _context.Log_AlteracaoProduto.Where(log => log.ProdutoId == id)
                 .OrderByDescending(log => log.DataAlteracao).ToList();

@@ -5,7 +5,8 @@ import CardProduto from '../card-produto/CardProduto'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faSliders } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { listarProduto } from '@/pages/api/produtoService';
+import { excluirProdutoPorId, listarProduto } from '@/pages/api/produtoService';
+import { toastConfirmarExclusao } from '@/utils/toasts';
 
 type produtos = {
     produtoId: number,
@@ -26,6 +27,16 @@ const ListaProduto = () => {
 
             console.log(error.message)
         }
+    }
+
+    function confirmarExclusao(produtoId: number) {
+        toastConfirmarExclusao(async () => {
+            try {
+                await excluirProdutoPorId(produtoId)
+            } catch (error: any) {
+                throw Error(error.message)
+            } 
+        })
     }
 
     useEffect(() => {
@@ -61,6 +72,7 @@ const ListaProduto = () => {
                             descricao={item.descricao}
                             imagemUrl={item.imagemUrl}
                             preco={item.preco}
+                            onDelete={confirmarExclusao}
                         />
                     ))
                         : (

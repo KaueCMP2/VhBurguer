@@ -23,9 +23,9 @@ namespace VhBurguer.Controllers
         }
 
         [HttpGet("produto/{Id}")]
-        public IActionResult ListarPorProduto(int produtoId)
+        public IActionResult ListarPorIdProduto(int produtoId)
         {
-            return Ok(_service.ListarPorProduto(produtoId));
+            return Ok(_service.ListarPorIdProduto(produtoId));
         }
     }
 }

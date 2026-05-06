@@ -30,9 +30,9 @@ namespace VhBurguer.Aplications.Services
             return listaLogProduto;
         }
 
-        public List<LerLogProdutoDTO> ListarPorProduto(int ProdutoId)
+        public List<LerLogProdutoDTO> ListarPorIdProduto(int ProdutoId)
         {
-            List<Log_AlteracaoProduto> logs = _repository.ListarPorProduto(ProdutoId);
+            List<Log_AlteracaoProduto> logs = _repository.ListarPorIdProduto(ProdutoId);
             
             List<LerLogProdutoDTO> listaLogProduto = logs.Select(log => new LerLogProdutoDTO
             {

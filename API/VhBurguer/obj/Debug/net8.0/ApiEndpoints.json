@@ -136,7 +136,7 @@
   },
   {
     "ContainingType": "VhBurguer.Controllers.LogProdutoController",
-    "Method": "ListarPorProduto",
+    "Method": "ListarPorIdProduto",
     "RelativePath": "api/LogProduto/produto/{Id}",
     "HttpMethod": "GET",
     "IsController": true,
