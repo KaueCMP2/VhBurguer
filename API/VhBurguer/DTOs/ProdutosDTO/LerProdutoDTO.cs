@@ -9,7 +9,8 @@
         public decimal Preco { get; set; }
 
         public string Descricao { get; set; } = null!;
-
+        public string imagemUrl { get; set; }
+        
         public bool? StatusProduto { get; set; }
 
         // categorias

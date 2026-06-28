@@ -46,7 +46,7 @@ const HomeAdm = () => {
 
                 <ListaProduto />
 
-                <section id={styles.unidades}>
+                <section id="unidades" className={styles.unidades}>
                     <div id={styles.side_unidades}>
                         <h3 id={styles.text_un_titulo}>Nossas uniddade</h3>
                         <li id={styles.unidades_lista}>

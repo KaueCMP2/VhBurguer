@@ -36,8 +36,8 @@ GO
 
 INSERT INTO Promocao (Nome, DataExpiracao)
 VALUES
-('Promoção Semana do Hambúrguer', '2026-03-01 23:59:59'),
-('Combo Happy Hour', '2026-02-20 23:59:59');
+('Promoção Semana do Hambúrguer', '20260301 23:59:59'),
+('Combo Happy Hour', '20260220 23:59:59');
 GO
 
 INSERT INTO ProdutoPromocao (ProdutoID, PromocaoID, PrecoAtual)

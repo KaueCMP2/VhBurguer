@@ -28,7 +28,7 @@ namespace VhBurguer.Repositories
         {
             Produto? produto = _ctx.Produto
                 .Include(p => p.Categoria)
-                .Include(p => p.UsuarioId)
+                .Include(p => p.Usuario)
                 .FirstOrDefault(p => p.ProdutoId == Id);
 
             return produto;
@@ -61,14 +61,15 @@ namespace VhBurguer.Repositories
             List<Categoria> categorias = _ctx.Categoria
                 .Where(c => CategoriasIds.Contains(c.CategoriaId))
                 .ToList();
-
-            produto.Categoria = categorias;
+            produto.Usuario = _ctx.Usuario.Find(produto.UsuarioId);
             _ctx.Produto.Add(produto);
             _ctx.SaveChanges();
         }
 
         public bool NomeExiste(string nome, int ProdutoIdAtual)
         {
+            Console.WriteLine("1111111111111111111");
+            Console.WriteLine(ProdutoIdAtual);
             return _ctx.Produto.Any(p => p.Nome == nome && p.ProdutoId != ProdutoIdAtual);
         }
 

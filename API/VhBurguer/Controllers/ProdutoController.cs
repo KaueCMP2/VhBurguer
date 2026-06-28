@@ -62,8 +62,23 @@ namespace VhBurguer.Controllers
 
             return Ok(produto);
         }
+
+        [HttpGet("{id}/imagem")]
+        public ActionResult ObterImagem(int id)
+        {
+            try
+            {
+                byte[] imagem = _service.ObterImagem(id);
+                return File(imagem, "Image/jpeg");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost]
-        [Consumes("Multipart/Form-Data")] // Indica que recebe dados no formato multpart/from-data
+        [Consumes("multipart/form-data")] // Indica que recebe dados no formato multpart/from-data
         [Authorize] // exige login para adicionar produtos
         public IActionResult Adicionar([FromForm] CriarProdutoDTO produtoDTO)
         {
@@ -79,10 +94,11 @@ namespace VhBurguer.Controllers
             catch (DomainException e)
             {
                 return BadRequest(e.Message);
-            }   
+            }
         }
 
-        [HttpPut("(id)")]
+        [HttpPut("{id}")]
+        [Consumes("multipart/form-data")] // Indica que recebe dados no formato multpart/from-
         [Authorize]
         public IActionResult Atualizar(int id, [FromForm] AtuallizarProdutoDTO produtoDTO)
         {

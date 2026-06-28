@@ -29,7 +29,7 @@
 #banner_hamb_img {
     width: clamp(300px, 40vw, 80vw);
     position: absolute;
-    top: 235px;
+    top: 33%;
 }
 
 #placeholder_vaz {
@@ -159,7 +159,7 @@
 /*?                         Unidades                          */
 /*?------------------------------------------------------------*/
 
-#unidades {
+.unidades {
     display: flex;
     align-items: center;
     justify-content: center;

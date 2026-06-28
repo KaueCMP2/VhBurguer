@@ -45,6 +45,17 @@
     box-shadow: -2px 2px 3px rgb(141, 141, 141);
 }
 
+#form_add_prod select {
+    padding: 2% 0 0 2%;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: -2px 2px 3px rgb(141, 141, 141);
+}
+
 #form_add_prod input:focus {
     border: 2.5px solid var(--laranja-destaque);
 }

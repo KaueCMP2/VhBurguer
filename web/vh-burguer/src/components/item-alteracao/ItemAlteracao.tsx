@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '@/components/item-alteracao/ItemAlteracao.module.css'
 
-const ItemAlteracao = () => {
+interface ItemLogProduto {
+    logId: number,
+    produtoId: number,
+    nomeAnterior: string,
+    precoAnterior: number
+    dataAlteracao: Date
+}
+
+const ItemAlteracao = ({ item }: { item: ItemLogProduto }) => {
+
     return (
         <tr className={styles.container_itens}>
-            <td className={styles.item}>12/12/12</td>
-            <td className={styles.item}>Monstro</td>
-            <td className={styles.item}>R$55,00</td>
+            <td className={styles.item}>{String(item?.dataAlteracao)}</td>
+            <td className={styles.item}>{item?.nomeAnterior}</td>
+            <td className={styles.item}>R$: {item?.precoAnterior}</td>
         </tr>
     )
 }

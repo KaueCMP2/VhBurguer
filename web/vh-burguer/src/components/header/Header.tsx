@@ -12,7 +12,7 @@ const Header = () => {
                 <nav id={styles.nav_menu}>
                     <a id={styles.a} href="#destaques">Destaques</a>
                     <a id={styles.a} href="#cardapio">Cardápio</a>
-                    <a id={styles.a} href="#unidade">Unidade</a>
+                    <a id={styles.a} href="#unidades">Unidades</a>
                     <Link id={styles.link} href='/login'>Login</Link>
                 </nav>
                 <button id={styles.btn_icon}>

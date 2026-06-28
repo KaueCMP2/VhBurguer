@@ -213,8 +213,34 @@
   },
   {
     "ContainingType": "VhBurguer.Controllers.ProdutoController",
+    "Method": "ObterPorId",
+    "RelativePath": "api/Produto/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VhBurguer.DTOs.ProdutoDto.LerProdutoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VhBurguer.Controllers.ProdutoController",
     "Method": "Atualizar",
-    "RelativePath": "api/Produto/(id)",
+    "RelativePath": "api/Produto/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -222,7 +248,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "Nome",
@@ -259,9 +285,9 @@
   },
   {
     "ContainingType": "VhBurguer.Controllers.ProdutoController",
-    "Method": "ObterPorId",
+    "Method": "Remover",
     "RelativePath": "api/Produto/{id}",
-    "HttpMethod": "GET",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -271,23 +297,13 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "VhBurguer.DTOs.ProdutoDto.LerProdutoDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "VhBurguer.Controllers.ProdutoController",
-    "Method": "Remover",
-    "RelativePath": "api/Produto/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "ObterImagem",
+    "RelativePath": "api/Produto/{id}/imagem",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

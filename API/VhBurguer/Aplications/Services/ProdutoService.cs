@@ -88,7 +88,7 @@ namespace VhBurguer.Applications.Services
         {
             ValidarCadastro(produtoDto);
 
-            if (_repository.NomeExiste(produtoDto.Nome))
+            if (_repository.NomeExiste(produtoDto.Nome) == false)
             {
                 throw new DomainException("Produto já existente");
             }

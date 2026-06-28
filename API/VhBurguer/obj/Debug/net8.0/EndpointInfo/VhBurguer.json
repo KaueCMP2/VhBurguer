@@ -306,7 +306,7 @@
         ],
         "requestBody": {
           "content": {
-            "Multipart/Form-Data": {
+            "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {
@@ -399,7 +399,7 @@
           }
         }
       },
-      "delete": {
+      "put": {
         "tags": [
           "Produto"
         ],
@@ -408,28 +408,6 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Produto/(id)": {
-      "put": {
-        "tags": [
-          "Produto"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -491,6 +469,50 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Produto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Produto/{id}/imagem": {
+      "get": {
+        "tags": [
+          "Produto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -985,6 +1007,10 @@
             "format": "double"
           },
           "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagemUrl": {
             "type": "string",
             "nullable": true
           },
